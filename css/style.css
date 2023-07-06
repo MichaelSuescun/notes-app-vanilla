@@ -1,0 +1,96 @@
+@import url("./fonts/fonts.css");
+
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Estilos de formulario */
+#form-notes {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin: 0 auto;
+  max-width: 700px;
+  min-width: 600px;
+  padding: 1rem;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field-container__label {
+  font-weight: 500;
+}
+
+.field-container__input {
+  
+}
+
+.field-container__input#description {
+  min-height: 6.25rem;
+  resize: none;
+}
+
+.field-container__input,
+.form-notes__button {
+  padding: .313rem;
+}
+
+.field-container__alert {
+  display: none;
+}
+
+/* Estilos del formulario en caso de entradas invalidas */
+.field-container.error .field-container__label {
+  color: red;
+}
+
+.field-container.error .field-container__input {
+  border: 3px solid transparent;
+  outline: 0.125rem solid red;
+}
+
+.field-container.error .field-container__alert {
+  display: block;
+  font-size: 0.8rem;
+}
+
+/* Estilos de nota */
+.notes-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 1rem;
+}
+
+.note {
+  border: .063rem solid black;
+  padding: .5rem;
+}
+
+.note__title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.note__description {
+  overflow-wrap: break-word;
+}
+
+/* Media queries */
+@media (prefers-color-scheme: dark) {
+  .note {
+    border: 1px solid white;
+  }
+}
+
+@media (width <= 576px) {
+  #form-notes {
+    min-width: 300px;
+    max-width: 100%;
+  }
+}
+

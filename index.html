@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Michael Suescun">
+    <meta name="description" content="Aplicación para tomar notas">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="./js/script.js" defer></script>
+    <title>notes App</title>
+  </head>
+  <body>
+    <form id="form-notes">
+      <div class="field-container" id="field-title">
+        <label class="field-container__label" for="title">Título</label>
+        <input class="field-container__input" type="text" name="title" id="title" autofocus>
+        <span class="field-container__alert">El campo está vacío</span>
+      </div>
+      <div class="field-container" id="field-description">
+        <label class="field-container__label" for="description">Descripción</label>
+        <textarea class="field-container__input" name="description" id="description"></textarea>
+        <span class="field-container__alert">El campo está vacío</span>
+      </div>
+      <button class="form-notes__button">GUARDAR</button>
+    </form>
+    <div class="notes-container">
+
+    </div>
+    <template id="note-template">
+      <div class="note">
+        <span class="note__title"></span>
+        <p class="note__description"></p>
+      </div>
+    </template>
+  </body>
+</html>
