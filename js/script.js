@@ -1,31 +1,21 @@
-const form = document.querySelector('#form-notes')
+const form = document.querySelector('.form-notes')
 const notesContainer = document.querySelector('.notes-container')
 const noteTemplate = document.querySelector('#note-template')
-
-// const titleContainer = document.querySelector('#field-title')
-// const titleInput = titleContainer.querySelector('#title')
 const titleInput = document.querySelector('#title')
-
-// const descriptionContainer = document.querySelector('#field-description')
-// const descriptionInput = descriptionContainer.querySelector('#description')
 const descriptionInput = document.querySelector('#description')
-
 const classError = 'error'
 
-const notes = []
-
-const checkInput = (element, classError) => {
-  // const { parentElement } = element
-
-  if (element.value == 0) {
-    element.parentElement.classList.add(classError)
+const checkInput = (inputElement, classError) => {
+  if (inputElement.value == 0) {
+    inputElement.parentElement.classList.add(classError)
   } else {
-    element.parentElement.classList.remove(classError)
+    inputElement.parentElement.classList.remove(classError)
   }
 
-  return element.parentElement.classList.contains(classError)
+  return inputElement.parentElement.classList.contains(classError)
 }
 
+// Agregar nota
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
@@ -33,7 +23,7 @@ form.addEventListener('submit', (e) => {
   const descriptionCheck = checkInput(descriptionInput, classError)
 
   if (titleCheck || descriptionCheck) {
-    throw new Error('Campo vacío')
+    return
   }
 
   const newNote = noteTemplate.content.cloneNode(true)
@@ -48,3 +38,13 @@ form.addEventListener('submit', (e) => {
   form.reset()
   titleInput.focus()
 })
+
+// Remover nota
+// notesContainer.addEventListener('click', (e) => {
+//   const note = e.target
+
+//   if (e.target.classList.contains('note')) {
+//     const button = note.querySelector('.note__button')
+//     button.classList.toggle('note__button--hidden')
+//   }
+// })

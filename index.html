@@ -4,19 +4,19 @@
     <meta name="author" content="Michael Suescun">
     <meta name="description" content="Aplicación para tomar notas">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="./js/script.js" defer></script>
-    <title>notes App</title>
+    <title>Notes App</title>
   </head>
   <body>
-    <form id="form-notes">
-      <div class="field-container" id="field-title">
+    <form class="form-notes">
+      <div class="field-container">
         <label class="field-container__label" for="title">Título</label>
         <input class="field-container__input" type="text" name="title" id="title" autofocus>
         <span class="field-container__alert">El campo está vacío</span>
       </div>
-      <div class="field-container" id="field-description">
+      <div class="field-container">
         <label class="field-container__label" for="description">Descripción</label>
         <textarea class="field-container__input" name="description" id="description"></textarea>
         <span class="field-container__alert">El campo está vacío</span>
@@ -24,12 +24,14 @@
       <button class="form-notes__button">GUARDAR</button>
     </form>
     <div class="notes-container">
-
+      <!-- Lugar de inserción de las notas -->
     </div>
     <template id="note-template">
       <div class="note">
         <span class="note__title"></span>
+        <hr>
         <p class="note__description"></p>
+        <!-- <button class="note__button note__button--hidden"><img src="icon/borrar.png" alt=""></button> -->
       </div>
     </template>
   </body>

@@ -2,17 +2,26 @@
 
 :root {
   font-family: "Roboto", sans-serif;
+  --background-colors-items: #f3f2f1
+}
+
+body {
+  background-image: url('../image/john-towner-JgOeRuGD_Y4-unsplash.jpg');
+  padding: 1rem;
 }
 
 /* Estilos de formulario */
-#form-notes {
+.form-notes {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  background-color: var(--background-colors-items);
+  border-radius: 5px;
   margin: 0 auto;
   max-width: 700px;
   min-width: 600px;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .field-container {
@@ -63,13 +72,27 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  padding: 1rem;
 }
 
 .note {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--background-colors-items);
   border: .063rem solid black;
+  border-radius: 5px;
   padding: .5rem;
+
+  transition: box-shadow 0.1s;
 }
+
+.note:hover {
+  box-shadow: 2px 2px 5px;
+}
+
+/* .note * {
+  pointer-events: none;
+} */
 
 .note__title {
   font-size: 1.2rem;
@@ -80,6 +103,19 @@
   overflow-wrap: break-word;
 }
 
+/* .note__button {
+  padding: 2px;
+  width: fit-content;
+}
+
+.note__button--hidden {
+  display: none;
+}
+
+.note__button * {
+  pointer-events: none;
+} */
+
 /* Media queries */
 @media (prefers-color-scheme: dark) {
   .note {
@@ -88,7 +124,7 @@
 }
 
 @media (width <= 576px) {
-  #form-notes {
+  .form-notes {
     min-width: 300px;
     max-width: 100%;
   }
